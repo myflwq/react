@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="count"></div>
+  <script src="lib/react.js"></script>
+  <script src="lib/react-dom.js"></script>
+  <script src="lib/browser.min.js"></script>
+  <script type="text/babel">
+    var Count = React.createClass({
+      getInitialState :function(){
+          return{
+            count:0,
+            display:true
+          };
+
+      },
+      add :function(){
+        this.setState({
+          count:this.state.count+1,
+          display:!this.state.display
+        })
+      },
+      sub :function(){
+        this.setState({
+          count:this.state.count-1
+        })
+      },
+      render :function(){
+        var divshow = this.state.display?"block":"none";
+        var styles = {
+          mydiv:{
+            width:"200px",
+            height:"200px",
+            backgroundColor:"red",
+            display:divshow
+          }
+        }
+        return(
+          <div>
+            <h1>数量 :{this.state.count}</h1>
+            <button onClick={this.add}>+1</button>
+            <button onClick={this.sub}>-1</button>
+            <div style={styles.mydiv}></div>
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(<Count/>,document.getElementById("count"));
+  </script>
+</body>
+</html>

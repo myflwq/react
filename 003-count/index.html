@@ -14,26 +14,27 @@
   <script src="lib/browser.min.js"></script>
   <script type="text/babel">
     var Counter = React.createClass({
-    getInitialState:function()  {
-      return {
-        // 返回值是个对象
-        count: 0
-      };
-    },
-    add :function(){
+      getInitialState:function(){
+        return{
+          count:0
+        }
+      },
+    add:function(){
+      console.log("hello");
       this.setState({
-        count:this.state.count+1
-      });
+        count:this.state.count + 1
+      })
     },
-    sub :function(){
+    sub:function(){
       this.setState({
-        count:this.state.count-1
-      });
+        count:this.state.count - 1
+      })
     },
     render: function() {
           return (
             <div>
-            <h1>数量：{this.state.count}</h1>
+            {/*注释*/}
+            <h1 >{this.state.count}</h1>
             <button onClick={this.add}>+1</button>
             <button onClick={this.sub}>-1</button>
             </div>
