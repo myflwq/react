@@ -16,14 +16,14 @@
       getInitialState :function(){
           return{
             count:0,
-            display:true
+            width:"200px"
           };
 
       },
       add :function(){
         this.setState({
           count:this.state.count+1,
-          display:!this.state.display
+          width:!this.state.width
         })
       },
       sub :function(){
@@ -32,13 +32,12 @@
         })
       },
       render :function(){
-        var divshow = this.state.display?"block":"none";
+        var divshow = this.state.width?"200px":"0";
         var styles = {
           mydiv:{
-            width:"200px",
+            width:divshow,
             height:"200px",
-            backgroundColor:"red",
-            display:divshow
+            backgroundColor:"red"
           }
         }
         return(
@@ -46,7 +45,7 @@
             <h1>数量 :{this.state.count}</h1>
             <button onClick={this.add}>+1</button>
             <button onClick={this.sub}>-1</button>
-            <div style={styles.mydiv}></div>
+            <div style={styles.mydiv}>{/*通过width来控制盒子的隐藏显示*/}</div>
           </div>
         );
       }
