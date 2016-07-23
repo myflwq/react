@@ -10,7 +10,9 @@ class DrawerOpenRight extends React.Component {
     this.state = {open: false};
   }
 
-  handleToggle(){this.setState({open: !this.state.open})};
+  handleToggle(){
+    this.setState({open: !this.state.open})
+  };
 
   render() {
     return (
@@ -20,7 +22,7 @@ class DrawerOpenRight extends React.Component {
           onTouchTap={this.handleToggle.bind(this)}
         />
         <Drawer width={200} openSecondary={true} open={this.state.open} >
-          <AppBar title="AppBar" />
+          <AppBar title="RightBar" />
         </Drawer>
       </div>
     );
