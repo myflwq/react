@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import map from 'lodash/fp/map';
 import BlogCard from './BlogCard.js';
 
 let blogs = [
@@ -10,13 +10,16 @@ let blogs = [
 
 class List extends Component {
   render(){
+    // console.log(Cards.length);
     var blogCards = [];
-    for (var i = 0; i < blogs.length; i++) {
-      let j=i+1;
-      blogCards.push(
-        <BlogCard title={blogs[i].title} data={blogs[i].data} index={j} key={i}/>
-      )
-    };
+    map((b) =>  {
+                  blogCards.push(
+                    <BlogCard title={b.title} date={b.date} index={b.index} key={Math.random()}/>
+                  );
+                },
+        blogs
+    );
+    // console.log(AllCards);
     return(
       <div>
         {blogCards}
