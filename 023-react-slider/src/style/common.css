@@ -1,0 +1,49 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+  float: left;
+  width: 33.3%;
+  height: 100vh;
+}
+img{
+  display: block;
+  width: 100%;
+}
+.box{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+ul{
+  width: 300%;
+  height: 100vh;
+  position: relative;
+  transition: all 1s;
+}
+.arrow {
+  display: inline-block;
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  z-index: 100;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.arrow:hover {
+  background: rgba(0,0,0,.2);
+}
+.right {
+  right: 0;
+}
+.left {
+  left: 0;
+}
