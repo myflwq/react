@@ -4,7 +4,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
-
+import axios from 'axios';
 //引入颜色
 // import {purpleA200, yellow500, blue500} from 'material-ui/styles/colors';
 //
@@ -23,6 +23,10 @@ class App extends React.Component {
     e.preventDefault();
     const account = this.refs.account.getValue();
     console.log(account);
+    axios.get(`https://api.github.com/users/${account}`)
+     .then((res) => {
+        console.log(res);
+      });
   }
   render () {
 
@@ -33,7 +37,7 @@ class App extends React.Component {
                hintText="Your Github Account"
                ref="account"
              />
-           <FlatButton label="SEARCH GITHUB" secondary={true} />
+           <FlatButton label="SEARCH GITHUB" secondary={true} type="submit"/>
         </form>
       </div>
     )
