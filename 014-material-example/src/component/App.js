@@ -8,6 +8,7 @@ import DrawerOpenRight from './Drawer';
 import SvgIconExampleIcons from './SvgIcon.js';
 import FontIconExampleIcons from './FontIcon.js';
 import AppBarExampleIconButton from './AppBar.js';
+import Progress from './Progress';
 //引入颜色
 // import {purpleA200, yellow500, blue500} from 'material-ui/styles/colors';
 //
@@ -33,6 +34,7 @@ class App extends React.Component {
         <DrawerOpenRight />
         <SvgIconExampleIcons />
         <FontIconExampleIcons />
+        <Progress />
       </div>
     )
   }
