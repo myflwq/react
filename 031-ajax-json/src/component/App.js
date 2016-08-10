@@ -20,13 +20,15 @@ class App extends React.Component {
   render() {
     console.log(this.state.posts);
     var blogCards = [];
-    map((b) =>  {
-                  blogCards.push(
-                    <BlogCard title={b.title} date={b.created_at } index={b.index} key={Math.random()}/>
-                  );
-                },
-        this.state.posts
-    );
+    if (this.props.search=='') {
+      map((b) =>  {
+                    blogCards.push(
+                      <BlogCard title={b.title} date={b.created_at } index={b.index} key={Math.random()}/>
+                    );
+                  },
+          this.state.posts
+      );
+     }
     // console.log(AllCards);
     return(
       <div>
